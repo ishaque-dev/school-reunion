@@ -90,13 +90,16 @@ class _HeroSection extends StatelessWidget {
                       Icon(Icons.celebration_rounded,
                           color: AppColors.gold, size: 16),
                       SizedBox(width: 8),
-                      Text(
-                        'CLASS REUNION 2026',
-                        style: TextStyle(
-                          color: Colors.white,
-                          letterSpacing: 2,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
+                      Flexible(
+                        child: Text(
+                          maxLines: 2,
+                          'CLASS REUNION 2026-GHSS Kannadiparmba',
+                          style: TextStyle(
+                              color: Colors.white,
+                              letterSpacing: 2,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              overflow: TextOverflow.ellipsis),
                         ),
                       ),
                     ],
