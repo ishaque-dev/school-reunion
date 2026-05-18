@@ -92,6 +92,7 @@ class _HeroSection extends StatelessWidget {
                       SizedBox(width: 8),
                       Flexible(
                         child: Text(
+                          textAlign: TextAlign.center,
                           maxLines: 2,
                           'CLASS REUNION 2026-GHSS Kannadiparmba',
                           style: TextStyle(
