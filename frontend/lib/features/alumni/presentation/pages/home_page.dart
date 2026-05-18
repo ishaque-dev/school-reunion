@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/utils/responsive.dart';
 import '../../domain/entities/batch.dart';
@@ -76,7 +77,8 @@ class _HeroSection extends StatelessWidget {
                 _NavBar(isMobile: isMobile),
                 SizedBox(height: isMobile ? 50 : 90),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   decoration: BoxDecoration(
                     color: Colors.white.withOpacity(0.15),
                     borderRadius: BorderRadius.circular(30),
@@ -85,7 +87,8 @@ class _HeroSection extends StatelessWidget {
                   child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Icons.celebration_rounded, color: AppColors.gold, size: 16),
+                      Icon(Icons.celebration_rounded,
+                          color: AppColors.gold, size: 16),
                       SizedBox(width: 8),
                       Text(
                         'CLASS REUNION 2026',
@@ -134,7 +137,8 @@ class _HeroSection extends StatelessWidget {
                       label: 'Browse Alumni',
                       icon: Icons.people_outline_rounded,
                       onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(builder: (_) => const DirectoryPage()),
+                        MaterialPageRoute(
+                            builder: (_) => const DirectoryPage()),
                       ),
                     ),
                     _SecondaryBtn(
@@ -173,7 +177,8 @@ class _NavBar extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: const Icon(Icons.school_rounded, color: AppColors.primary, size: 24),
+              child: const Icon(Icons.school_rounded,
+                  color: AppColors.primary, size: 24),
             ),
             const SizedBox(width: 12),
             const Text(
@@ -216,7 +221,8 @@ class _PrimaryBtn extends StatelessWidget {
   final IconData icon;
   final VoidCallback onTap;
 
-  const _PrimaryBtn({required this.label, required this.icon, required this.onTap});
+  const _PrimaryBtn(
+      {required this.label, required this.icon, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -264,7 +270,8 @@ class _SecondaryBtn extends StatelessWidget {
   final IconData icon;
   final VoidCallback onTap;
 
-  const _SecondaryBtn({required this.label, required this.icon, required this.onTap});
+  const _SecondaryBtn(
+      {required this.label, required this.icon, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -277,7 +284,8 @@ class _SecondaryBtn extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 15),
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.white.withOpacity(0.6), width: 1.5),
+            border:
+                Border.all(color: Colors.white.withOpacity(0.6), width: 1.5),
             borderRadius: BorderRadius.circular(50),
           ),
           child: Row(
@@ -468,7 +476,8 @@ class _BatchesSection extends StatelessWidget {
                 crossAxisSpacing: 20,
                 mainAxisSpacing: 20,
                 childAspectRatio: cols == 1 ? 2.5 : 1.0,
-                children: Batch.values.map((b) => _BatchCard(batch: b)).toList(),
+                children:
+                    Batch.values.map((b) => _BatchCard(batch: b)).toList(),
               );
             },
           ),
@@ -539,7 +548,8 @@ class _BatchCardState extends State<_BatchCard> {
                               color: Colors.white.withOpacity(0.2),
                               borderRadius: BorderRadius.circular(12),
                             ),
-                            child: Icon(widget.batch.icon, color: Colors.white, size: 22),
+                            child: Icon(widget.batch.icon,
+                                color: Colors.white, size: 22),
                           ),
                           Icon(
                             Icons.arrow_outward_rounded,
@@ -637,8 +647,10 @@ class _CTABanner extends StatelessWidget {
                   label: const Text('Register Now'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.secondary,
-                    padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 18),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 32, vertical: 18),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50)),
                   ),
                 ),
               ],
@@ -668,7 +680,7 @@ class _Footer extends StatelessWidget {
                 const Icon(Icons.school_rounded, color: Colors.white, size: 20),
                 const SizedBox(width: 8),
                 Text(
-                  'Class Reunion 2026',
+                  'Class Reunion 2026 - GHSS Kannadiparmba',
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.9),
                     fontWeight: FontWeight.w600,
@@ -679,7 +691,8 @@ class _Footer extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               'For the alumni community',
-              style: TextStyle(color: Colors.white.withOpacity(0.6), fontSize: 12),
+              style:
+                  TextStyle(color: Colors.white.withOpacity(0.6), fontSize: 12),
             ),
             const SizedBox(height: 14),
             Container(
