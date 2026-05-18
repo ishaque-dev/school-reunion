@@ -1,0 +1,43 @@
+# Render Blueprint: one free Postgres DB + one Spring Boot web service.
+# Deploy by pushing this repo to GitHub and choosing "Blueprint" in the Render dashboard.
+
+databases:
+  - name: reunion-db
+    plan: free
+    databaseName: reuniondb
+    user: reunion
+
+services:
+  - type: web
+    name: reunion-backend
+    runtime: docker
+    plan: free
+    region: oregon              # change if you prefer
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/alumni/stats
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: DB_HOST
+        fromDatabase:
+          name: reunion-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: reunion-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: reunion-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: reunion-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: reunion-db
+          property: password
+      - key: CORS_ALLOWED_ORIGINS
+        sync: false             # set this in the Render dashboard to your Firebase Hosting URL after first deploy
