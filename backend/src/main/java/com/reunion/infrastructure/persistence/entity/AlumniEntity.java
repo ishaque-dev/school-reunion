@@ -11,7 +11,6 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
@@ -62,7 +61,6 @@ public class AlumniEntity {
 
     // Holds either a regular URL or a base64 data URL of an uploaded image.
     // TEXT column type fits both H2 and PostgreSQL with no fixed length cap.
-    @Lob
     @Column(columnDefinition = "TEXT")
     private String profilePhotoUrl;
 
