@@ -13,7 +13,7 @@ import java.util.List;
 public interface JpaAlumniRepository extends JpaRepository<AlumniEntity, Long> {
 
     @Query("SELECT a FROM AlumniEntity a WHERE " +
-           "(:search IS NULL OR " +
+           "(:search = '' OR " +
            "LOWER(a.name) LIKE LOWER(CONCAT('%', :search, '%')) OR " +
            "LOWER(COALESCE(a.occupation, '')) LIKE LOWER(CONCAT('%', :search, '%')) OR " +
            "LOWER(COALESCE(a.city, '')) LIKE LOWER(CONCAT('%', :search, '%')) OR " +

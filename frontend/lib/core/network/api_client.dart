@@ -1,12 +1,14 @@
 import 'dart:async';
 import 'dart:convert';
+
 import 'package:http/http.dart' as http;
+
 import '../error/exceptions.dart';
 
 class ApiClient {
   static const String defaultBaseUrl = String.fromEnvironment(
     'API_URL',
-    defaultValue: 'http://localhost:8080/api',
+    defaultValue: 'https://reunion-backend-yaob.onrender.com/api',
   );
 
   final String baseUrl;

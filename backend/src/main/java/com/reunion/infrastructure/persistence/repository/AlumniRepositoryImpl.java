@@ -33,7 +33,7 @@ public class AlumniRepositoryImpl implements AlumniRepository {
 
     @Override
     public List<Alumni> search(Optional<String> query, Optional<Batch> batch) {
-        return jpa.search(query.orElse(null), batch.orElse(null))
+        return jpa.search(query.orElse(""), batch.orElse(null))
             .stream()
             .map(mapper::toDomain)
             .toList();
